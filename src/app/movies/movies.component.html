@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-4">
+    <div class="list-group" *ngFor="let movie of movies">
+      <div class="list-group-item">
+        Movie:- {{ movie.name }} 
+        <h5>Director:-{{ movie.directorName }}</h5>
+        <p>Release Year:- {{ movie.releaseYear }}</p>
+      </div>
+    </div>
+  </div>
+</div>
