@@ -1,11 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-reviewers',
   templateUrl: './reviewers.component.html',
   styleUrls: ['./reviewers.component.css']
 })
-export class ReviewersComponent  {
+export class ReviewersComponent implements OnInit  {
+ 
+  constructor(private route:ActivatedRoute){
+    
+  }
+  ngOnInit() {
+  
+  }
 
   reviewers =[
     {

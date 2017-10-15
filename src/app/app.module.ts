@@ -7,6 +7,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { ReviewersComponent } from './reviewers/reviewers.component';
 import { ReviewerComponent } from './reviewer/reviewer.component';
+import { EditreviewerComponent } from './editreviewer/editreviewer.component';
 
 const appRoutes:Routes=[
  {path:'',component:HomeComponent},
@@ -14,6 +15,7 @@ const appRoutes:Routes=[
  {path:'movies',component:MoviesComponent},
  {path:'reviewers',component:ReviewersComponent},
  {path:'reviewers/:id/:name',component:ReviewerComponent}
+ 
 ];
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ const appRoutes:Routes=[
     MoviesComponent,
     ReviewsComponent,
     ReviewersComponent,
-    ReviewerComponent
+    ReviewerComponent,
+    EditreviewerComponent
   ],
   imports: [
     BrowserModule,

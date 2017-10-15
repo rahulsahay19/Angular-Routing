@@ -17,4 +17,7 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/movies']);
   }
 
+  onLoadRoute(id:number){
+    this.router.navigate(['/reviewers',id,'edit'],{queryParams:{editable:'1'},fragment:'testing'});
+  }
 }

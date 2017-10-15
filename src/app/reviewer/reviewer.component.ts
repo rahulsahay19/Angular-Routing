@@ -7,7 +7,7 @@ import { ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./reviewer.component.css']
 })
 export class ReviewerComponent implements OnInit {
-
+ 
   reviewer:{id:number,name:string};
 
   constructor(private route:ActivatedRoute) { }
@@ -16,7 +16,10 @@ export class ReviewerComponent implements OnInit {
     this.reviewer={
       id:this.route.snapshot.params['id'],
       name:this.route.snapshot.params['name']
-    }
+      }
+     
+      console.log("Query Parameters:- ",this.route.snapshot.queryParams);
+      console.log("Fragments:- ",this.route.snapshot.fragment);
 
     this.route.params
         .subscribe(
