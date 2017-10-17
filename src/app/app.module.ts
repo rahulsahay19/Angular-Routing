@@ -9,8 +9,7 @@ import { ReviewersComponent } from './reviewers/reviewers.component';
 import { ReviewerComponent } from './reviewer/reviewer.component';
 import { EditreviewerComponent } from './editreviewer/editreviewer.component';
 import { routes as childRoutes, ReviewsModule } from './reviews/reviews.module';
-
-
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const appRoutes:Routes=[
   //Basic Routes
@@ -21,7 +20,11 @@ const appRoutes:Routes=[
  {path:'reviewers/:id/:name',component:ReviewerComponent},
 
  //Child or Nested Routes 
-  {path:'reviews', component:ReviewsComponent,children:childRoutes}
+  {path:'reviews', component:ReviewsComponent,children:childRoutes},
+
+  //not found
+  {path:'not-found',component:NotFoundComponent},
+  {path:'**',redirectTo:'/not-found'}
 ];
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ const appRoutes:Routes=[
     ReviewsComponent,
     ReviewersComponent,
     ReviewerComponent,
-    EditreviewerComponent
+    EditreviewerComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
