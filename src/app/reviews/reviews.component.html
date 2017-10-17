@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
   <div class="col-xs-12 col-sm-4">
     <div class="list-group"  *ngFor="let review of reviews">
       <div class="list-group-item">
@@ -9,4 +9,19 @@
     </div>
   </div>
 </div>
+ -->
 
+ <h2>Reviews</h2>
+ 
+ <div class="navLinks">
+   <!-- <a [routerLink]="['./main']">Main</a> | -->
+   <a [routerLink]="['./review-info']">Review Info</a> |
+   <a [routerLink]="['./reviewers-info']">Reviewers Info</a> |
+   Enter id: <input #id size="6">
+   <button (click)="goToReview(id.value)">Go</button>
+ </div>
+ 
+ <div class="reviews-area">
+   <router-outlet></router-outlet>
+ </div>
+ 

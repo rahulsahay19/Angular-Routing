@@ -8,14 +8,20 @@ import { ReviewsComponent } from './reviews/reviews.component';
 import { ReviewersComponent } from './reviewers/reviewers.component';
 import { ReviewerComponent } from './reviewer/reviewer.component';
 import { EditreviewerComponent } from './editreviewer/editreviewer.component';
+import { routes as childRoutes, ReviewsModule } from './reviews/reviews.module';
+
+
 
 const appRoutes:Routes=[
+  //Basic Routes
  {path:'',component:HomeComponent},
- {path:'reviews',component:ReviewsComponent},
+//  {path:'reviews',component:ReviewsComponent},
  {path:'movies',component:MoviesComponent},
  {path:'reviewers',component:ReviewersComponent}, 
- {path:'reviewers/:id/:name',component:ReviewerComponent}
-  
+ {path:'reviewers/:id/:name',component:ReviewerComponent},
+
+ //Child or Nested Routes 
+  {path:'reviews', component:ReviewsComponent,children:childRoutes}
 ];
 @NgModule({
   declarations: [
@@ -29,7 +35,8 @@ const appRoutes:Routes=[
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ReviewsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
