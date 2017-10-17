@@ -13,9 +13,9 @@ const appRoutes:Routes=[
  {path:'',component:HomeComponent},
  {path:'reviews',component:ReviewsComponent},
  {path:'movies',component:MoviesComponent},
- {path:'reviewers',component:ReviewersComponent},
+ {path:'reviewers',component:ReviewersComponent}, 
  {path:'reviewers/:id/:name',component:ReviewerComponent}
- 
+  
 ];
 @NgModule({
   declarations: [
