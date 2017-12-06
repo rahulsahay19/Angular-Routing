@@ -10,22 +10,10 @@ import { ReviewerComponent } from './reviewer/reviewer.component';
 import { EditreviewerComponent } from './editreviewer/editreviewer.component';
 import { routes as childRoutes, ReviewsModule } from './reviews/reviews.module';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AppRoutingModule } from './app.routing-module';
+import { AuthGuard } from './auth-guard.service';
+import { AuthService } from './auth.service';
 
-const appRoutes:Routes=[
-  //Basic Routes
- {path:'',component:HomeComponent},
-//  {path:'reviews',component:ReviewsComponent},
- {path:'movies',component:MoviesComponent},
- {path:'reviewers',component:ReviewersComponent}, 
- {path:'reviewers/:id/:name',component:ReviewerComponent},
-
- //Child or Nested Routes 
-  {path:'reviews', component:ReviewsComponent,children:childRoutes},
-
-  //not found
-  {path:'not-found',component:NotFoundComponent},
-  {path:'**',redirectTo:'/not-found'}
-];
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,10 +27,10 @@ const appRoutes:Routes=[
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
-    ReviewsModule
+    ReviewsModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
