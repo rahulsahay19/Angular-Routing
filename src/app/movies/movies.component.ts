@@ -9,7 +9,7 @@ import { MoviesService } from './movies.service';
 })
 export class MoviesComponent implements OnInit {
 
-  private movies:{id: number, name: string, directorName: string,releaseYear:string}[] = [];
+  public movies:{id: number, name: string, directorName: string,releaseYear:string}[] = [];
   constructor(private moviesService:MoviesService) { }
 
   ngOnInit() {
